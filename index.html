@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Gokul Accord CHS LTD — Redevelopment Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,26 +131,12 @@
   #portal-screen { display: none; }
 
   /* ── HEADER ── */
-.site-header {
-  background: linear-gradient(135deg, #090D16, #1E1B4B);
-  color: #fff;
-  /* Adds extra space on top for Android/iPhone status bar */
-  padding: max(28px, env(safe-area-inset-top, 28px)) 22px 10px 22px;
-  min-height: 75px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
-  gap: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-  @media (max-width: 768px) {
   .site-header {
-    padding: max(26px, env(safe-area-inset-top, 26px)) 14px 10px 14px;
-    min-height: 70px;
+    background: linear-gradient(135deg, #090D16, #1E1B4B);
+    color: #fff; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between;
+    min-height: 60px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.22); gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  /* ... other rules ... */
-}
   .header-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
   .menu-toggle-btn {
     display: none; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
