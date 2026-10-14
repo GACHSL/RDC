@@ -1,8 +1,7 @@
 {
   "name": "Gokul Accord CHS Redevelopment",
-  "short_name": "Gokul Accord",
-  "start_url": "https://gachsl.github.io/RDC/",
-  "scope": "https://gachsl.github.io/RDC/",
+  "short_name": "Gokul_Accord_Database",
+   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0F172A",
   "theme_color": "#4338CA",
