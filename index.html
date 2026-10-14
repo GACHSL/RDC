@@ -1325,8 +1325,8 @@
 
   // ── 5. AUTO-LOGIN ON PAGE LOAD ──
   window.addEventListener('DOMContentLoaded', () => {
-    const sessionUser = localStorage.getItem('gokul_user');
-    const sessionRole = localStorage.getItem('gokul_role') || 'Member';
+    const sessionUser = sessionStorage.getItem('gokul_user');
+    const sessionRole = sessionStorage.getItem('gokul_role') || 'Member';
     if (sessionUser) {
       launchPortal(sessionUser, sessionRole);
     }
@@ -1337,7 +1337,7 @@
   const IDLE_LIMIT = 5 * 60 * 1000;
 
   function resetIdleTimer() {
-    if (!localStorage.getItem('gokul_user')) return;
+    if (!sessionStorage.getItem('gokul_user')) return;
     clearTimeout(idleTimer);
     idleTimer = setTimeout(() => {
       alert("Session expired due to 5 minutes of inactivity.");
@@ -1377,8 +1377,8 @@
         msg.className = "msg-success";
         msg.textContent = "Access Granted. Loading portal...";
         
-        localStorage.setItem('gokul_user', data.name);
-        localStorage.setItem('gokul_role', data.role || 'Member');
+sessionStorage.setItem('gokul_user', data.name);
+sessionStorage.setItem('gokul_role', data.role || 'Member');
         
         setTimeout(() => launchPortal(data.name, data.role || 'Member'), 400);
       } else {
@@ -1624,7 +1624,7 @@
                 </div>
               `;
             }).join('');
-            if (localStorage.getItem('gokul_role') === 'Admin') document.body.classList.add('is-admin');
+            if (sessionStorage.getItem('gokul_role') === 'Admin') document.body.classList.add('is-admin');
           }
         } else {
           if (docsPill) docsPill.textContent = `0 docs`;
@@ -2497,11 +2497,11 @@
   }
 
   // ── 17. LOGOUT HANDLER ──
-  function logout() {
-    localStorage.removeItem('gokul_user');
-    localStorage.removeItem('gokul_role');
-    location.reload();
-  }
+ function logout() {
+  sessionStorage.removeItem('gokul_user');
+  sessionStorage.removeItem('gokul_role');
+  location.reload();
+}
 
   // ── 18. NAVIGATION HANDLER (DRAWER AUTO-CLOSE ON MOBILE) ──
   function showPage(id, navEl) {
